@@ -18,10 +18,6 @@
             modelBuilder.Entity<OrderItem>()
                 .HasKey(oi => new { oi.OrderId, oi.ProductId, oi.ProductTypeId });
 
-              // Sample Images
-                Image image1 = new Image { Id = 1, Url = "https://example.com/image1.jpg" };
-                Image image2 = new Image { Id = 2, Url = "https://example.com/image2.jpg" };
-
 
             modelBuilder.Entity<ProductType>().HasData(
                     new ProductType
@@ -87,14 +83,14 @@
                         Title = "Raythos C-320 Jet",
                         Description = "A versatile commercial jet",
                         ImageUrl = "https://example.com/main-image.jpg",
-                        Images = new List<Image> { image1, image2 },
+                        Images = new List<Image> (),
                         CategoryId = 1,
                         Featured = true,
                         Variants = new List<ProductVariant>(),
                         Visible = true,
                         Deleted = false
                     },
-                     new Product
+                    new Product
                     {
                         Id = 2,
                         Title = "Raythos Light Jet X200",

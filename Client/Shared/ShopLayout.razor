@@ -2,12 +2,20 @@
 
 <div class="page">
     <main>
-        <div class="top-row px-2">
-            <HomeButton />
-            <Search />
-            <UserButton />
-            <CartCounter />
-        </div>
+        <nav class="top-bar" style="background-color: #f8f9fa; box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem;">
+                <HomeButton />
+                <Search />
+                <div class="user-controls" style="display: flex; gap: 1rem;">
+                    <!-- User button, cart counter, etc., go here -->
+                    <UserButton />
+                    <CartCounter />
+                </div>
+            </div>
+        </nav>
+        @*<div class="top-row px-2">
+          
+        </div>*@
 
         <div class="nav-menu">
             <ShopNavMenu />
