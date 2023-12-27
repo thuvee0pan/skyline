@@ -15,7 +15,7 @@ namespace skyline.Server.Services.PaymentService
             IAuthService authService,
             IOrderService orderService)
         {
-            StripeConfiguration.ApiKey = "sk_test_51HnFFuJWja1dketA1LY3VQds3XWpByD5GE8laKrxyNldWKnXXdktvITJiG3PYNDMwpSkrAv33d7JjvHDEUGPPo2E00vkDMlVIb";
+            StripeConfiguration.ApiKey = "sk_test_51ORZr6D9OcDwZR6tugy13Wu1wQELuWtW6tnjXIXxGx6DNBV4sy8R7VeMZWbf89y7LrPywpbUKns1KQ1068SOTjv200NZ7vR7uH";
 
             _cartService = cartService;
             _authService = authService;
@@ -30,7 +30,7 @@ namespace skyline.Server.Services.PaymentService
             {
                 PriceData = new SessionLineItemPriceDataOptions
                 {
-                    UnitAmountDecimal = product.Price * 100,
+                    UnitAmountDecimal = product.Price,
                     Currency = "usd",
                     ProductData = new SessionLineItemPriceDataProductDataOptions
                     {
@@ -55,8 +55,8 @@ namespace skyline.Server.Services.PaymentService
                 },
                 LineItems = lineItems,
                 Mode = "payment",
-                SuccessUrl = "https://localhost:7226/order-success",
-                CancelUrl = "https://localhost:7226/cart"
+                SuccessUrl = "https://localhost:5000/order-success",
+                CancelUrl = "https://localhost:5000/cart"
             };
 
             var service = new SessionService();
